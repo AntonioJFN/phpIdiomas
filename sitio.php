@@ -1,4 +1,17 @@
+<?php
 
+    $msg0=gettext("h1"); //Contenido h1 aplicacion adaptada al idioma...
+    $msg1 =gettext("h2"); //Contenido h2 pagina de Manuel
+    $msg2=gettext("FR"); //boton frances
+    $msg3=gettext("EN"); //...ingles
+    $msg4=gettext("ES"); // castellano
+    $msg5=gettext("sel_idioma"); //titulo radio buton
+    $msg9=gettext("sel_idioma_submit"); //boton del radio buton
+    $msg10=gettext("volver"); //boton Volver a index.php
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,24 +23,26 @@
 
 </head>
 <body>
-<h1>Aplicación de adaptada a idiomas Castellano</h1>
+<h1><?=$msg0?></h1>
 
 
 <fieldset class="idioma">
-    <form action="sitio.php" method="post">
-                <legend>Selecciona idioma</legend>
-<input type='radio' name='idioma'   value="fr_FR.utf8">Francés<br/>
-<input type='radio' name='idioma'   value='en_US.utf8'>Inglés<br/>
-<input type='radio' name='idioma'   value='es_ES.utf8'>Español<br/>
-<input type='submit' style='float:right' name='submit' value='Establecer idioma'>    </form>
+    <form action="index.php" method="post">
+
+        <legend><?= $msg5?></legend>
+        <input type="radio" name="idioma" value="frances"><?= $msg2?><br/>
+        <input type="radio" name="idioma" value="ingles"><?= $msg3?><br/>
+        <input type="radio" name="idioma"  value="castellano"><?= $msg4?>
+        <input type="submit" style='float:right' name="submit" value=<?=$msg9?> >
+    </form>
 </fieldset>
 <hr style='margin-top:50px' />
 
-<h2>Bienvenido a este sition web Manuel</h2>
+<h2><?=msg1?></h2>
 
     <form action="index.php" method="post">
 
-        <input type="submit" style='float:right' value="Volver ">
+        <input type="submit" style='float:right' value=<?=$msg10?> >
         <input type="hidden" name =idioma value = '' >
     </form>
 
