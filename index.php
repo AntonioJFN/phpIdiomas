@@ -11,13 +11,7 @@ $arrastra_castellano=$idioma=="castellano" ? "checked":"";
 $arrastra_frances=$idioma=="frances" ? "checked":"";
 $arrastra_ingles=$idioma=="ingles" ? "checked":"";
 
-if (!setlocale(LC_ALL, codigo_idioma($idioma))){
-    echo "No se ha podido cargar el idioma $idioma como categoría LC_ALL";
-}
-if (!putenv("LC_ALL=".codigo_idioma($idioma)."")){
-    echo "No se ha podido establecer el idioma $idioma en variables de entorno<br />";
-}
-bindtextdomain('fichero', './locale');
+establece_idioma($idioma);
 
 //definimos las variables que cambiarán dependiendo del idioma establecido
 $msj0=gettext("tituloindex"); //Titulo página
@@ -31,8 +25,7 @@ $msj7=gettext("usuario");
 $msj8=gettext("contraseña");
 $msj9=gettext("sel_idioma_submit"); //boton del radio buton
 $msj10=gettext("acceso_submit"); //boton acceso a sitio.php
-$msj11=gettext($error);//traducción error si falta user y/o pass
-
+$msj11=gettext($error);//traducción error si falta user y/o pass //de momento solo hay uno: "error_datos"
 
 ?>
 

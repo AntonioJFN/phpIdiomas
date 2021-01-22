@@ -1,5 +1,4 @@
 <?php
-
 require_once 'funciones.php';
 
 $usuario=$_POST['user'];
@@ -17,6 +16,7 @@ if (!comprobar_integridad($usuario,$password)){
     $error_datos="error_datos";
     header("Location:index.php?err=$error_datos&idioma=$idioma");
 }
+
 //definimos las variables que cambiarán dependiendo del idioma establecido
 $msj0=gettext("titulositio"); //Titulo página
 $msj1 =gettext("h1sitio"); //Mensaje de bienvenida
@@ -30,6 +30,7 @@ $msj11="h2sitio";
 $msj12="submit_volver";
 
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
